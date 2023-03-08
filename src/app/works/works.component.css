@@ -1,0 +1,33 @@
+#photo-grid {
+  margin-top: 20px;
+}
+
+#photo-grid img {
+  display: block;
+  max-width: 100%;
+}
+
+.carousel-control {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+  color: #fff;
+}
+
+.carousel-control.left span,
+.carousel-control.right span {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.carousel-control.left {
+  left: 0;
+}
+
+.carousel-control.right {
+  right: 0;
+}

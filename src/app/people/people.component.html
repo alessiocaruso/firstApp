@@ -1,0 +1,36 @@
+<div class="container">
+<h2>Team</h2>
+<div class="container">
+  <div class="text">
+    <p>Siamo un team composto da persone cariche di passione ed entusiasmo per il loro lavoro che rappresentano la ragione primaria per cui i nostri clienti ci raccomandano ad altri. Il nostro gruppo, giovane e motivato, è formato da laureati in discipline economico-giuridiche a cui si affiancano esperti linguisti, comunicatori e tecnici informatici. Le diverse esperienze e professionalità, all’interno del gruppo, ci consentono di offrire soluzioni diversificate e innovative per far fronte a ogni esigenza e permettendo ai nostri clienti di raggiungere i migliori risultati. 
+</p>
+  </div>
+  <div class="image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShJwMGqQ0_QBIvwEOxUXQFlzos1BsQGPe5BhE_OceATn8yxeR0KLL8Tl6wE0Zn7BtTTDA&usqp=CAU" alt="Descrizione dell'immagine">
+  </div>
+</div>
+<div class="container">
+
+<div *ngFor="let person of people">
+  <div class="text">
+
+  <h3>
+    <a [title]="person.name + ' details'" [routerLink]="['/people', person.id]" routerLinkActive="active">
+      {{ person.name }}
+    </a>
+  </h3>
+  
+  <p *ngIf="person.description">Description: {{ person.description }}</p>
+  </div>
+  <div class="image">
+
+  <img [src]="person.logo" alt="{{person.logo}}'s image" style="max-width: 100px;">
+</div>
+
+</div>
+
+<button  (click)='navigateToWorks()' routerLinkActive="active" >Scopri di più sui nostri lavori</button>
+
+
+</div>
+<router-outlet></router-outlet>

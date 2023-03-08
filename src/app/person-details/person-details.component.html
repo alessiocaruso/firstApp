@@ -1,0 +1,24 @@
+<!--
+<div *ngIf="person">
+  <h3>{{ person.name }}</h3>
+  <p>{{ person.description }}</p>
+  <img [src]="person.image" alt="{{person.image}}'s image" style="max-width: 200px;">
+</div>
+
+
+<app-person-detail-output [outputStrings]="[person.name, person.description]" ></app-person-detail-output>
+-->
+<input [(ngModel)]="textBox" />
+<button type="button" (click)="canc()" >Clear</button>
+<button type="button" (click)="generateRandomKey()" >RandomKey</button>
+
+<app-person-detail-output 
+[person]="person"  (customEvent)="onCustomEvent($event)" 
+[size]="fontSizePx" (sizeChange)="fontSizePx=$event"
+[text]="textBox" (textChange)="onCustomEvent2($event)" 
+></app-person-detail-output> 
+
+<div *ngIf="textBox=='we' || textBox==='ciao'">
+Saluti anche a te
+</div>
+<br>
